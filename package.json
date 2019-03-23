@@ -1,14 +1,17 @@
 {
-"name": "the-boiis-bot",
-"version": "1.0.1",
-"description": "The Boii's Bot",
-"main": "index.js",
-"author": "Benjamin Trounson",
+  "name": "the-boiis-bot",
+  "version": "1.0.1",
+  "description": "The Boii's Bot",
+  "main": "index.js",
+  "author": "Benjamin Trounson",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-musicbot-addon": "^13.4.5",
+    "opusscript": "0.0.6",
     "ytdl-core": "^0.29.1",
     "ytpl": "^0.1.14",
     "ytsearcher": "^1.2.2"

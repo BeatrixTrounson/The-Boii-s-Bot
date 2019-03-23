@@ -66,6 +66,12 @@ client.on('guildMemberAdd', member => {
 // Send a message using the webhook
 hook.send('I am now alive!');
 
+  // Following the above examples
+  Music.start(client, {
+    youtubeKey: "AIzaSyCXP6t8eBRUmnQvmBXMWPVHVvzdJByx1Rg",   // Again, you ALWAYS need this.
+    insertMusic: true // Set to true, the Client will now have "Client.music".
+  });
+
 exports.start = (client, options) => {
 try {
     if (process.version.slice(1).split('.')[0] < 8) {
