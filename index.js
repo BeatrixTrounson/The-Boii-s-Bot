@@ -28,9 +28,9 @@ const hook = new Discord.WebhookClient('558921382407307275', 'amj-kkWkIjg6GMNT8d
 
  // Create an event listener for messages
  client.on('message', message => {
-   // If the message is "bitch"
+   // If the message is "overwatch"
    if (message.content === 'overwatch') {
-     // Send "lasanga" to the same channel
+     // Send "imgur overwatch" to the same channel
      message.channel.send('https://imgur.com/search/score?q=overwatch');
    }
  });
