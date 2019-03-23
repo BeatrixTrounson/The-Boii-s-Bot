@@ -5,7 +5,7 @@ const ytpl = require('ytpl');
 const PACKAGE = require('./package.json');
 const { Client, Attachment } = require('discord.js');
 const client = new Discord.Client();
-
+client.music = require("discord.js-musicbot-addon");
  /**
   * The ready event is vital, it means that only _after_ this will your bot start reacting to information
   * received from Discord
@@ -62,37 +62,7 @@ client.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}`);
 });
 
-
 // Send a message using the webhook
 hook.send('I am now alive!');
-
-// Now we start the music module.
-client.music.start(client, {
-  // Set the api key used for YouTube.
-  // This is required to run the bot.
-  youtubeKey: "AIzaSyCXP6t8eBRUmnQvmBXMWPVHVvzdJByx1Rg"
-
-  // The PLAY command Object.
-play: {
-  // Usage text for the help command.
-  usage: "{{prefix}}play some tunes",
-  // Whether or not to exclude the command from the help command.
-  exclude: false
-},
-
-// Make it so anyone in the voice channel can skip the
-// currently playing song.
-anyoneCanSkip: true,
-
-// Make it so the owner (you) bypass permissions for music.
-ownerOverMember: true,
-ownerID: "yourDiscordId",
-
-// The cooldown Object.
-cooldown: {
-  // This disables the cooldown. Not recommended.
-  enabled: false
-}
-});
 
 client.login('NTU4OTA4MzU5Mjg2NDU2MzIx.D3dwFA.J2qUQ7g9H5JhNWWvNii6xAQNdO0');
