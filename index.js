@@ -35,6 +35,53 @@ const hook = new Discord.WebhookClient('558921382407307275', 'amj-kkWkIjg6GMNT8d
    }
  });
 
+ // Create an event listener for messages
+ client.on('message', message => {
+   // If the message is "overwatch"
+   if (message.content === '!github') {
+     // Send "imgur overwatch" to the same channel
+     message.channel.send('https://github.com/BeatrixTrounson/The-BoiiZ-Bot');
+   }
+ });
+
+ // Create an event listener for messages
+ client.on('message', message => {
+   // If the message is "bitch"
+   if (message.content === '!birthdays') {
+     // Send "lasanga" to the same channel
+     message.channel.send
+     (`
+      **Bailey/Letter42 - __January 28__**
+
+**Ella/oceanman - __April 24__**
+
+**Ben 1/stanLOONA - __May 23__**
+
+**Jasmine/Bubblpoppa - __August 15__**
+
+**Koen/potatoman - __September 5__**
+
+**Ben 2/Beatrix - __October 5__**
+
+**Dan/username264 - __November 5__**`);
+   }
+ });
+
+ // Create an event listener for messages
+ client.on('message', message => {
+   // If the message is "overwatch"
+   if (message.content === '!help') {
+     // Send "imgur overwatch" to the same channel
+     message.channel.send(`
+The Bot Commands Are:
+  **!overwatch**
+  **!birthdays**
+  **!github**
+  **!bitch**
+  **!whats my avatar**`);
+   }
+ });
+
 // Create an event listener for message what is my avatar then output there profile pic
 client.on('message', message => {
   // If the message is "what is my avatar"
@@ -44,10 +91,11 @@ client.on('message', message => {
   }
 });
 
-/**
+
+
+/*
   * work in progress
-  */
-/* client.on('message', message => {
+  client.on('message', message => {
     // If the message is '!rip'
     if (message.content === '!randomimgur') {
       function generateimageURL(len, charSet) {
