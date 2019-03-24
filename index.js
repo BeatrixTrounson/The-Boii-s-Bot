@@ -20,7 +20,7 @@ const hook = new Discord.WebhookClient('558921382407307275', 'amj-kkWkIjg6GMNT8d
  // Create an event listener for messages
  client.on('message', message => {
    // If the message is "bitch"
-   if (message.content === 'bitch') {
+   if (message.content === '!bitch') {
      // Send "lasanga" to the same channel
      message.channel.send('lasanga');
    }
@@ -29,7 +29,7 @@ const hook = new Discord.WebhookClient('558921382407307275', 'amj-kkWkIjg6GMNT8d
  // Create an event listener for messages
  client.on('message', message => {
    // If the message is "overwatch"
-   if (message.content === 'overwatch') {
+   if (message.content === '!overwatch') {
      // Send "imgur overwatch" to the same channel
      message.channel.send('https://imgur.com/search/score?q=overwatch');
    }
@@ -38,25 +38,31 @@ const hook = new Discord.WebhookClient('558921382407307275', 'amj-kkWkIjg6GMNT8d
 // Create an event listener for message what is my avatar then output there profile pic
 client.on('message', message => {
   // If the message is "what is my avatar"
-  if (message.content === 'what is my avatar') {
+  if (message.content === '!what is my avatar') {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
   }
 });
 
 /**
-  * posts a image of rip when said command is read in chat
+  * work in progress
   */
-client.on('message', message => {
+/* client.on('message', message => {
     // If the message is '!rip'
-    if (message.content === '!rip') {
-        // Create the attachment using Attachment
-        const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
-        // Send the attachment in the message channel
-        message.channel.send(attachment);
+    if (message.content === '!randomimgur') {
+      function generateimageURL(len, charSet) {
+        charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var randomimg = 'http://i.imgur.com/';
+        for (var i = 0; i < len; i++) {
+          var randomPoz = Math.floor(Math.random() * charSet.length);
+          randomimg += charSet.substring(randomPoz,randomPoz+1);
+          console.log( randomimg ) // The one to send
+          message.channel.send("rawr", randomimg);
+        }
+      }
     }
 });
-
+*/
 /**
  * A bot that welcomes new guild members when they join
  */
