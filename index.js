@@ -2,10 +2,24 @@ const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const {YTSearcher} = require('ytsearcher');
 const ytpl = require('ytpl');
+const fs = require('fs');
 const PACKAGE = require('./package.json');
 const { Client, Attachment } = require('discord.js');
 const client = new Discord.Client();
 client.music = require("discord.js-musicbot-addon");
+var deathcounter_zero = 0;
+var one = 1;
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "bitch"
+    if (message.content === '+1 deathcounter') {
+       var deathcounter = deathcounter_zero += one;
+       var deathcounterstring = 'The Death Counter has gone up by 1 and now equals: ';
+       var combinded_value = deathcounterstring + deathcounter;
+      // Send "lasanga" to the same channel
+      message.channel.send(combinded_value)
+    }
+});
  /**
   * The ready event is vital, it means that only _after_ this will your bot start reacting to information
   * received from Discord
@@ -43,6 +57,25 @@ const hook = new Discord.WebhookClient('558921382407307275', 'amj-kkWkIjg6GMNT8d
      message.channel.send('https://github.com/BeatrixTrounson/The-BoiiZ-Bot');
    }
  });
+
+ // Create an event listener for messages
+ client.on('message', message => {
+   // If the message is "bitch"
+   if (message.content === 'THE ASS OF VAJRA') {
+     // Send "lasanga" to the same channel
+     message.channel.send('https://cdn.discordapp.com/attachments/368914786496282627/560412892604923905/SPOILER_fc5.png')
+   }
+});
+
+
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "bitch"
+  if (message.content === 'the ass of vajra') {
+    // Send "lasanga" to the same channel
+    message.channel.send('https://cdn.discordapp.com/attachments/368914786496282627/560412892604923905/SPOILER_fc5.png')
+  }
+});
 
  // Create an event listener for messages
  client.on('message', message => {
