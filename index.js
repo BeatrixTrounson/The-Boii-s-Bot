@@ -12,9 +12,9 @@ var one = 1;
 // Create an event listener for messages
 client.on('message', message => {
   // If the message is "bitch"
-    if (message.content === '+1 deathcounter') {
+    if (message.content === '+1 death counter') {
        var deathcounter = deathcounter_zero += one;
-       var deathcounterstring = 'The Death Counter has gone up by 1 and now equals: ';
+       var deathcounterstring = 'The death counter has gone up by 1 and now equals: ';
        var combinded_value = deathcounterstring + deathcounter;
       // Send "lasanga" to the same channel
       message.channel.send(combinded_value)
