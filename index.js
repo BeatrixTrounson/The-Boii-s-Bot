@@ -124,10 +124,7 @@ client.on('message', message => {
   }
 });
 
-
-
-/*
-  * work in progress
+// Work In Progress
   client.on('message', message => {
     // If the message is '!rip'
     if (message.content === '!randomimgur') {
@@ -138,7 +135,7 @@ client.on('message', message => {
           var randomPoz = Math.floor(Math.random() * charSet.length);
           randomimg += charSet.substring(randomPoz,randomPoz+1);
           console.log( randomimg ) // The one to send
-          message.channel.send("rawr", randomimg);
+      message.channel.send("rawr", generateimageURL);
         }
       }
     }
