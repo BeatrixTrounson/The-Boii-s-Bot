@@ -12,7 +12,7 @@ var one = 1;
 // Create an event listener for messages
 client.on('message', message => {
   // If the message is "bitch"
-    if (message.content === '+1 death counter') {
+    if (message.content === '+1 deathcounter') {
        var deathcounter = deathcounter_zero += one;
        var deathcounterstring = 'The death counter has gone up by 1 and now equals: ';
        var combinded_value = deathcounterstring + deathcounter;
