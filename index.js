@@ -111,7 +111,7 @@ The Bot Commands Are:
   **!birthdays**
   **!github**
   **!bitch**
-  **!randomimage**
+  **!randomimage(Sometimes work's and could post NSFW content)**
   **the ass of vajra/THE ASS OF VAJRA**
   **+1 deathcounter**
   **!whats my avatar**`);
@@ -132,38 +132,38 @@ client.on('message', message => {
     // If the message is '!rip'
   if (message.content === '!randomimage') {
     function grabPic()
-{
-  var randURL = generateURL();
-  getMeta(randURL, function(wth) {
-    // The "invalid" images have a width of 161.
-    if (wth && wth !== 161) {
-      document.getElementById("question5").style.backgroundImage = "url('" + randURL + "')";
-    } else {
-      // If the test fails, start over.
-      grabPic();
+    {
+      var randURL = generateURL();
+      getMeta(randURL, function(wth) {
+        // The "invalid" images have a width of 161.
+        if (wth && wth !== 161) {
+          document.getElementById("question5").style.backgroundImage = "url('" + randURL + "')";
+        } else {
+          // If the test fails, start over.
+          grabPic();
+        }
+      });
+    }
+    // Generate a new imgur.com url, ending with a series of 5
+    // random, case-sensitive letters and numbers.
+    function generateURL() {
+      var alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+      var url = "http://i.imgur.com/";
+      for (var i = 0; i < 5; i++) {
+        url = url.concat(alpha[Math.floor(Math.random() * alpha.length)]);
+      }
+      return url.concat('.jpg');
+    }
+      // Extract the metadata from an image url.
+      function getMeta(url, callback) {
+        $("<img/>").attr("src", url).load(function(){
+          callback(this.width);
+        });
+      }
+      console.log(generateURL())
+      message.channel.send(generateURL())
     }
   });
-}
-// Generate a new imgur.com url, ending with a series of 5
-// random, case-sensitive letters and numbers.
-function generateURL() {
-  var alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-  var url = "http://i.imgur.com/";
-  for (var i = 0; i < 5; i++) {
-    url = url.concat(alpha[Math.floor(Math.random() * alpha.length)]);
-  }
-  return url.concat('.jpg');
-}
-    // Extract the metadata from an image url.
-function getMeta(url, callback) {
-  $("<img/>").attr("src", url).load(function(){
-    callback(this.width);
-  });
-}
-    console.log(generateURL())
-    message.channel.send(generateURL())
-  }
-});
 
 /**
  * A bot that welcomes new guild members when they join
